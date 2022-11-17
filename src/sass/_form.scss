@@ -1,0 +1,6 @@
+@use "./variables" as *;
+
+.new-todo
+{
+    background-color: $main-color;
+}
