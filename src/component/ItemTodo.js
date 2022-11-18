@@ -1,8 +1,9 @@
 function ItemTodo () {
     return (
-        <label for="todo1">
+        <label 
+        className="todo__list__item">
             <input type="checkbox" id="todo1" name="todo1" value="todo1"/>
-            test todo 1
+            <p className="todo__list__item__text">test todo 1</p>
         </label>
     )
 }

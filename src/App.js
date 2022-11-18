@@ -1,4 +1,4 @@
-import './css/style.css';
+import './sass/_main.scss';
 import ToDoAdd from './component/ToDoAdd';
 import ItemTodo from './component/ItemTodo';
 
@@ -10,10 +10,12 @@ function App() {
           <ToDoAdd />
       </section>
       <hr/>
-      <section>
+      <section className='todo'>
         <h2>Todo List</h2>
-        <ItemTodo />
-        <ItemTodo />
+        <div className="todo__list">
+          <ItemTodo />
+          <ItemTodo />
+        </div>
       </section>
     </main>
   );

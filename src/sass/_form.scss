@@ -3,4 +3,28 @@
 .new-todo
 {
     background-color: $main-color;
+    padding: 1rem;
+
+    &__input
+    {
+        background-color: $secondary-color;
+        border: none;
+        padding: 1em;
+        width: 20em;
+        height: 2em;
+
+        border-radius: 1em 0 0 1em;
+    }
+    &__button-arrow
+    {
+        //display arrow
+
+        height: 4em;
+        width: 4em;
+        background-color: $third-color;
+        border-radius: 0 1em 1em 0;
+        border-left: 1px solid black;
+
+
+    }
 }
