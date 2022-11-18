@@ -12,10 +12,7 @@ function App() {
       <hr/>
       <section className='todo'>
         <h2>Todo List</h2>
-        <div className="todo__list">
           <ItemTodo />
-          <ItemTodo />
-        </div>
       </section>
     </main>
   );
