@@ -7,7 +7,12 @@ function ItemTodo () {
         <div className="todo__list">
             {todos.map((todo,index) => (
             <label className="todo__list__item" key={index}>
-                <input type="checkbox" value="todo1" defaultChecked={todo.state}/>
+                <input type="checkbox" value="todo1" defaultChecked={todo.state} 
+                onChange={() => {
+                    const newTodos = [...todos];
+                    newTodos[index].state = !newTodos[index].state;
+                    setTodo(newTodos);
+                }}/>
                 <p className="todo__list__item__text">{todo.text}</p>
             </label>
             ))}
