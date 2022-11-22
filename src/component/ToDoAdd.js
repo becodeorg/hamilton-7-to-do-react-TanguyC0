@@ -7,9 +7,8 @@ function ToDoAdd({add})
     function clickHandler() {
         const inputElement = inputRef.current;
 
-        add(prevTodos =>{
-            return [...prevTodos, { text:inputElement.value , state:false}]
-        })
+        add(inputElement.value);
+        inputElement.value = '';
       }
 
     return (

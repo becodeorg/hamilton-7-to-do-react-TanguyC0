@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function ItemTodo ({lst, fct}) {
-    
+function ItemTodo ({data}) {
+
+    const todosList = [{text:"Learn React",state:false}, {text:"Learn Node",state:false}, {text:"Learn Express",state:false}, {text:"Learn MongoDB",state:false}];
+    const [todos, setTodo] = useState(todosList);
+
     const handleTodo = (id) => {
-        let newTodos = [...lst];
+        let newTodos = [...todos];
         newTodos[id].state = !newTodos[id].state;
-        fct(newTodos);
+        setTodo(newTodos);
     }
+
+    useEffect(() => {
+        if(data !== '')
+        {
+            let newTodos = [...todos];
+            newTodos.push({text:data,state:false});
+            setTodo(newTodos);
+        }
+    }, [data]);
 
     return (
         <div className="todo__list">
-            {lst.map((todo,index) => (
+            {todos.map((todo,index) => (
             <label className="todo__list__item" key={index}>
                 <input 
                     type="checkbox" 
