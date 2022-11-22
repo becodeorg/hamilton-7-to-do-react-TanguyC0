@@ -1,0 +1,56 @@
+@use "../utilities/variables" as *;
+
+.list
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    width: 100%;
+    &__title
+    {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $third-color;
+    }
+    &__items
+    {
+        display: flex;
+        // flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 1em 0;
+        width: 100%;
+        &__item
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 40%;
+            padding: 0 1em;
+            margin-top: 0.5em;
+            list-style-type: none;
+            &__checkbox
+            {
+                margin-right: 0.5em;
+                margin-top: 0.4em;
+                border: none;
+                color: $main-color;
+                cursor: pointer;
+                &:checked + .list__items__item__text
+                {
+                    text-decoration: line-through;
+                }
+            }
+            &__text
+            {
+                font-size: 1em;
+                color: $third-color;
+                text-align: left;
+            }
+        }
+    }
+}

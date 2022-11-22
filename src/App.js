@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './sass/_main.scss';
+import './sass/main.scss';
 import ToDoAdd from './component/ToDoAdd';
 import ItemTodo from './component/ItemTodo';
 
@@ -15,17 +15,17 @@ function App() {
   // const [todos, setTodo] = useState(todosList);
 
   return (
-    <main className="App">
-      <section>
-        <h1>My First React App</h1>
-          <ToDoAdd add={childToParent}/>
-      </section>
+    <>
+    <header className="hero">
+      <h1 className="hero__title">My First React App</h1>
+    </header>
+    <main className="body">
+      <ToDoAdd add={childToParent}/>
       <hr/>
-      <section className='todo'>
-        <h2>Todo List</h2>
-          <ItemTodo data={data}/>
-      </section>
+      <ItemTodo data={data}/>
+
     </main>
+    </>
   );
 }
 

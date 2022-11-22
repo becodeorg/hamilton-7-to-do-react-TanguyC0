@@ -1,0 +1,17 @@
+@use "../utilities/variables" as *;
+.hero
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+
+    background-color: $secondary-color;
+    &__title
+    {
+        font-size: 4em;
+        font-weight: 700;
+        color: $third-color;
+    }
+}

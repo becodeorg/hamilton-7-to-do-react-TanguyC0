@@ -27,20 +27,23 @@ function ItemTodo ({data}) {
     }, [data]);
 
     return (
-        <div className="todo__list">
+        <section className="list">
+            <h2 className="list__title">Todo List</h2>
+            <ul className="list__items">
             {todos.map((todo,index) => (
-            <label className="todo__list__item" key={index}>
+            <li className="list__items__item" key={index}>
                 <input 
                     type="checkbox" 
                     value="todo1" 
-                    className="todo__list__item__checkbox"
+                    className="list__items__item__checkbox"
                     defaultChecked={todo.state} 
                     onChange={() => handleTodo(index)}
                 />
-                <p className="todo__list__item__text">{todo.text}</p>
-            </label>
+                <p className="list__items__item__text">{todo.text}</p>
+            </li>
             ))}
-        </div>
+            </ul>
+        </section>
     )
 }
     

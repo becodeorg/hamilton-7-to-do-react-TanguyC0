@@ -18,14 +18,13 @@ function ToDoAdd({add})
         newTodos.push({text:inputElement.value,state:false});
         localStorage.setItem('todos', JSON.stringify(newTodos));
         add(inputElement.value);
-        inputElement.value = '';
       }
 
     return (
-        <div className='new-todo'>
-            <input className='new-todo__input' type="text" placeholder='place a new todo' ref={inputRef}/>
-            <input type="submit" value="►" className="new-todo__button-arrow" onClick={clickHandler}/>
-        </div>
+        <form className='form'>
+            <input className='form__input' type="text" placeholder='place a new todo' ref={inputRef}/>
+            <input type="submit" value="►" className="form__button" onClick={clickHandler}/>
+        </form>
     );
 }
 

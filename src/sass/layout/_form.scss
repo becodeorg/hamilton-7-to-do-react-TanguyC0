@@ -1,0 +1,30 @@
+@use "../utilities/variables" as *;
+.form
+{
+    &__input
+    {
+        width: 15em;
+        height: 2em;
+        padding-left: 1em;
+        border-radius: $radiuss 0 0 $radiuss;
+    }
+    &__button
+    {
+        width: 2em;
+        height: 2em;
+        
+        border: none;
+        border-radius: 0 $radiuss $radiuss 0;
+        background-color: $third-color;
+        color: $main-color;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: $main-color;
+            color: $third-color;
+            border: 1px solid $third-color;
+        }
+    }
+}

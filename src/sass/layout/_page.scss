@@ -1,0 +1,30 @@
+@use "../utilities/variables" as *;
+#root
+{
+    min-height: 100vh;
+    background-color: $main-color;
+}
+
+.body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 3em;
+    padding: 1em 0;
+
+    background-color: $secondary-color;
+    color: $third-color;
+
+    font-size: calc(1em + 1vmin);
+    text-align: center;
+
+    border-radius: $radiuss;
+
+    &__title
+    {
+        font-size: 4em;
+        font-weight: 700;
+    }
+}
