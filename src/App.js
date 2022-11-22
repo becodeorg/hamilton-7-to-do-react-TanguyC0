@@ -17,7 +17,6 @@ function App() {
     if (tmp) {
      setTodos(tmp);
     }
-    console.log("useEffect");
   }, []);
 
   useEffect(() => {

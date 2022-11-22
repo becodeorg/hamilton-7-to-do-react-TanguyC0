@@ -8,6 +8,12 @@ function ItemTodo ({todos, setTodo}) {
         setTodo(newTodos);
     }
 
+    const handleDelete = (id) => {
+        let newTodos = [...todos];
+        newTodos.splice(id, 1);
+        setTodo(newTodos);
+    }
+
     return (
         <section className="list">
             <h2 className="list__title">Todo List</h2>
@@ -22,6 +28,7 @@ function ItemTodo ({todos, setTodo}) {
                     onChange={() => handleTodo(index)}
                 />
                 <p className="list__items__item__text">{todo.text}</p>
+                <input type="button" value="🗑️" className="list__items__item__button" onClick={() => handleDelete(index)}/>
             </li>
             ))}
             </ul>
