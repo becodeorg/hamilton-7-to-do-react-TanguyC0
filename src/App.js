@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './sass/main.scss';
 import ToDoAdd from './component/ToDoAdd';
 import ItemTodo from './component/ItemTodo';
 
+const LSKEY = "MyTodoApp";
+
 function App() {
-  const [data, setData] = useState('');
-  
-  const childToParent = (childdata) => {
-    console.log(childdata);
-    setData(childdata);
+  const [todos, setTodos] = useState([]);
+
+  function addTodo(todo) {
+    setTodos([...todos, {text:todo, state: false }]);
   }
 
-  // const todosList = [{text:"Learn React",state:false}, {text:"Learn Node",state:false}, {text:"Learn Express",state:false}, {text:"Learn MongoDB",state:false}];
-  // const [todos, setTodo] = useState(todosList);
+  useEffect(() => {
+    const tmp = JSON.parse(localStorage.getItem(LSKEY + ".todos"));
+    if (tmp) {
+     setTodos(tmp);
+    }
+    console.log("useEffect");
+  }, []);
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
+    }
+  }, [todos]);
 
   return (
     <>
@@ -20,9 +32,9 @@ function App() {
       <h1 className="hero__title">My First React App</h1>
     </header>
     <main className="body">
-      <ToDoAdd add={childToParent}/>
+      <ToDoAdd add={addTodo}/>
       <hr/>
-      <ItemTodo data={data}/>
+      <ItemTodo todos={todos} setTodo={setTodos}/>
 
     </main>
     </>
