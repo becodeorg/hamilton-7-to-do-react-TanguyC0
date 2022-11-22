@@ -9,6 +9,8 @@
         display: flex;
         flex-direction: column;
         background-color: $secondary-color;
+        border-radius: 1em;
+        min-width: 20em;
 
         &__item
         {
@@ -16,9 +18,13 @@
             justify-content: flex-start;
             align-items: center;
             padding: 1rem;
+            &__checkbox:checked + &__text
+            {
+                text-decoration: line-through;
+            }
             &__text
             {
-                color: $main-color;
+                color: $third-color;
                 font-size: 1.5rem;
             }
             

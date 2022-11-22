@@ -12,6 +12,7 @@
         padding: 1em;
         width: 20em;
         height: 2em;
+        border: 1px solid $third-color;
 
         border-radius: 1em 0 0 1em;
     }
@@ -21,10 +22,16 @@
 
         height: 4em;
         width: 4em;
-        background-color: $third-color;
+        background-color: $secondary-color;
         border-radius: 0 1em 1em 0;
-        border-left: 1px solid black;
-
+        border: 1px solid $third-color;
+        color: $third-color;
+        
+        &:hover
+        {
+            background-color: $third-color;
+            color: $main-color;
+        }
 
     }
 }
